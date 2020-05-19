@@ -6,7 +6,13 @@ Cette application Node.js contient les composants serveur et client pour permett
 
 Le formulaire html d'inscription d'usager peut être pré-rempli en ajoutant les paramètres GET à l'URL. Par exemple:
 
-http://localhost:3000/formulaire/?givenName=John&familyName=Toto&email=john.toto@umontreal.ca&streetAddress=allo%0Atoto&locality=Montr%C3%A9al&region=Qu%C3%A9bec&country=Canada&postalCode=A1A1A1&telephone=5551234567
+`http://localhost:3000/formulaire/?givenName=John&familyName=Toto&email=john.toto@umontreal.ca&streetAddress=allo%0Atoto&locality=Montr%C3%A9al&region=Qu%C3%A9bec&country=Canada&postalCode=A1A1A1&telephone=5551234567`
+
+Les données du formulaire sont envoyées à l'`API Usagers` qui se chargera de transmettre le tout à l'API de WorldShare. Les données suivantes seront ajoutée par l'API Usagers avant d'être transmises:
+
+- Un code barres. Celui-ci est composé selon le pattern `um00000n` où `n` est un numéro séquentiel;
+- Une date de péremption `oclcExpirationDate` définit au 1er octobre à venir;
+- La propriété `isVerified` définie à `false`.
 
 ## Préalables
 
