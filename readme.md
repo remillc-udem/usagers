@@ -1,5 +1,7 @@
 # Formulaire de création d'usagers
 
+![Capture d'écran du formulaire](doc/formulaire.png)
+
 ## Introduction
 
 Cette application Node.js contient les composants serveur et client pour permettre la création d'usagers dans WorldShare Management Services (WMS) via un formulaire Web. Un courriel de confirmation est également envoyé à l'usager ainsi qu'à une adresse institutionnelle. Une copie de chaque demande est conservée dans le dossier `data`.
