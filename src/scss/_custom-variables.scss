@@ -1,0 +1,56 @@
+
+// Material colors
+$primary-color:        #48566b;
+$primary-color-dark:   #0d47a1;
+$secondary-color:      #a6c;
+$secondary-color-dark: #93c;
+$default-color:        #2bbbad;
+$default-color-dark:   #00695c;
+$info-color:           #48566b;
+$info-color-dark:      #09c;
+$success-color:        #00c851;
+$success-color-dark:   #007e33;
+$warning-color:        #fb3;
+$warning-color-dark:   #f80;
+$danger-color:         #ff3547;
+$danger-color-dark:    #c00;
+$elegant-color:        #2e2e2e;
+$elegant-color-dark:   #212121;
+$stylish-color:        #4b515d;
+$stylish-color-dark:   #3e4551;
+$unique-color:         #3f729b;
+$unique-color-dark:    #1c2331;
+$special-color:        #37474f;
+$special-color-dark:   #263238;
+$white:                #fff;
+$black:                #000;
+$error-color:          red;
+
+$material-colors: ();
+$material-colors: map-merge(
+  (
+    "primary-color":        $primary-color,
+    "primary-color-dark":   $primary-color-dark,
+    "secondary-color":      $secondary-color,
+    "secondary-color-dark": $secondary-color-dark,
+    "default-color":        $default-color,
+    "default-color-dark":   $default-color-dark,
+    "info-color":           $info-color,
+    "info-color-dark":      $info-color-dark,
+    "success-color":        $success-color,
+    "success-color-dark":   $success-color-dark,
+    "warning-color":        $warning-color,
+    "warning-color-dark":   $warning-color-dark,
+    "danger-color":         $danger-color,
+    "danger-color-dark":    $danger-color-dark,
+    "elegant-color":        $elegant-color,
+    "elegant-color-dark":   $elegant-color-dark,
+    "stylish-color":        $stylish-color,
+    "stylish-color-dark":   $stylish-color-dark,
+    "unique-color":         $unique-color,
+    "unique-color-dark":    $unique-color-dark,
+    "special-color":        $special-color,
+    "special-color-dark":   $special-color-dark
+  ),
+  $material-colors
+);

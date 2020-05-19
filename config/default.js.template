@@ -1,0 +1,53 @@
+import { join } from 'path'
+
+export const app = {
+  port: 3000,
+  logDir: join(__dirname, '..', 'logs'),
+  cors: {
+    origin: ['*'],
+  }
+}
+
+/*
+ * Configs pour les requêtes au serveur de token auth.oclc.org
+ *
+ * Au printemps 2020, le serveur de token retourne de façon erratique occasionnellement une 
+ * erreur ERRCONRESET. Ces paremètres permettent de contourner l'erreur en réessayant d'obtenir
+ * un token en cas d'erreur.
+ *
+ * tokenTrials:         Nombre maximal d'essais
+ * tokenTrialsInterval: Délais entre les essais
+ */
+
+export const auth = {
+  tokenTrials: 5,
+  tokenTrialsInterval: 1500
+}
+
+export const identityManagementAPIWsKey = {
+  key: '',
+  secret: '',
+  institution: '1234' // Le numéro d'institution chez WMS (registry ID) où l'usager doit être créé
+}
+
+export const mailer = {
+  from: 'info@votreinstitution.ca',
+  smtp: {
+    host: 'localhost',
+    port: 25
+  }
+}
+
+/*
+ * Configs client http pour les requêtes à WMS
+ *
+ * timeout:   Durée maximale des requêtes http à WMS avant un timeout
+ * proxy:     Si votre institution utilise un serveur proxy de tunelling pour anonymiser 
+ *            les adresses ip utilisées en interne, inscrivez l'adresse du serveur
+ *            proxy. Exemple: 'http://proxy.ti.moninstitution.ca:80'
+ */
+
+export const httpClient = {
+  timeout: 5000,
+  proxy: null // 
+}

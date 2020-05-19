@@ -1,0 +1,7 @@
+$skins: () !default;
+$skins: map-merge((
+  'bib': (
+    'skin-primary-color':       #fff,
+    'skin-btn-primary':         red
+    )
+) , $skins )

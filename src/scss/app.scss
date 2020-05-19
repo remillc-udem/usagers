@@ -1,0 +1,35 @@
+// @use '~bootstrap/scss/bootstrap-grid'
+
+@import './custom-variables';
+
+@import './bootstrap';
+// @use '~bootstrap/scss/bootstrap';
+@import './skin';
+// @use '~mdbootstrap/scss/mdb-free.scss';
+@import './mdbootstrap.scss';
+
+select {
+  cursor: pointer;
+}
+
+.pre {
+    background: #efefef;
+    padding: 1em;
+    margin: 1em 2em;
+    font-size: small;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.custom-select {
+      border-width: 0 0 1px 0;
+      border-radius: 0;
+}
+
+label {
+  cursor: pointer!important;
+}
+
+::placeholder {
+  opacity: .6 !important;
+ }

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Material Design Bootstrap -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./css/app.css">
+
+    <title>Inscription au catalogue</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/url-search-params/8.0.0/min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+
+  <body class="bib">
+    <noscript>
+      <p>Cette page nécessite l'utilisation de javascript afin de pouvoir fonctionner correctement.</p>
+    </noscript>
+    <div class="container">
+      <div class="card">
+        <div class="card-header info-color white-text text-center py-4">
+          <h1>Inscription au catalogue</h1>
+        </div>
+
+        <section id="section-formulaire" class="section" hidden>
+          <div class="card-body px-lg-5 pt-0">
+
+            <!-- <p class="my-5 p-3" style="background: #efefef;">Champs pré-remplissables: <span id="props"></span>.</p> -->
+
+            <form action="../users/" class="md-form" method="POST" id="registration-form">
+
+              <p><small>* Champs obligatoire</small></p>
+
+              <div class="row">
+                <div class="col-md">
+                  <div class="md-form"><input type="text" name="givenName" id="givenName" class="form-control prefillable" required />
+                    <label for="givenName">Prénom</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="md-form"><input type="text" name="familyName" id="familyName" class="form-control prefillable" required />
+                    <label for="familyName">Nom</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="md-form"><input type="email" name="email" id="email" class="form-control prefillable" required />
+                    <label for="email">Courriel</label>
+                  </div>
+                </div>
+              </div>
+
+              <input type="hidden" name="borrowerCategory" value="UdeM - Ent. locales" class="prefillable" />
+              <input type="hidden" name="homeBranch" value="264141" class="prefillable" />
+
+              <fieldset class="form-group mt-5" name="borrowerAddress">
+                <legend>Adresse</legend>
+                <input type="hidden" name="streetAddress" id="streetAddress" class="prefillable" />
+                <div class="row">
+                  <div class="col">
+                    <div class="md-form"><input type="text" id="streetAddressLine1" class="form-control" required data-field="streetAddress" />
+                      <label for="streetAddressLine1">Rue 1</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="md-form"><input type="text" id="streetAddressLine2" class="form-control" data-field="streetAddress" />
+                      <label for="streetAddressLine2">Rue 2</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="md-form"><input type="text" name="locality" id="locality" class="form-control prefillable" required />
+                      <label for="locality">Ville</label>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="md-form"><input type="text" name="region" id="region" class="form-control prefillable" required value="Québec" />
+                      <label for="region">Province / région</label>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="md-form"><input type="text" name="country" id="country" class="form-control prefillable" required value="Canada" />
+                      <label for="country">Pays</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="md-form"><input type="text" name="postalCode" id="postalCode" class="form-control prefillable" required />
+                      <label for="postalCode">Code postal</label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="md-form"><input type="tel" name="telephone" id="telephone" class="form-control prefillable" placeholder="514-123-4567" required />
+                      <label for="telephone">Téléphone</label>
+                    </div>
+                  </div>
+                </div>
+
+              </fieldset>
+
+              <fieldset class="form-group my-5">
+                <legend>Consentement</legend>
+                <div class="mt-4" style="border: 1px solid #d4d4d4; padding: 1em;">
+                  <p>En tant qu’organismes publics universitaires, les bibliothèques universitaires sont assujetties à la <em>Loi sur l’accès aux documents des organismes publics et sur la protection des renseignements personnels</em> (RLRQ c. A2-1, ci-après désignée la « Loi »). Toutes les informations à caractère personnel, qu’elles soient nominatives ou qualitatives, sont protégées par la Loi.</p>
+                  <p>Afin de réaliser leur mission d’enseignement et de recherche, les bibliothèques universitaires québécoises (ci-après désignées « BUQ ») collectent les renseignements personnels qui sont contenus dans le présent formulaire d’abonnement.</p>
+                  <p>Ces données sont conservées sur des plateformes sécurisées jusqu’à trois (3) ans après l’échéance de votre abonnement. Elles sont accessibles aux membres du personnel des BUQ dans le cadre de leurs fonctions. Les employés ayant accès aux données à caractère personnel sont liés par un engagement de confidentialité.</p>
+                  <p>En m’abonnant et en utilisant les services des bibliothèques universitaires, je consens à ce que mes renseignements personnels inscrits dans ce formulaire ainsi que l’historique de mes transactions et certaines notes liées à mon dossier soient collectés, utilisés et conservés.</p>
+                </div>
+                <div class="md-form" style="padding-left: 1.5rem;">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="consentement" id="consentement" value="oui" required>
+                    <label class="custom-control-label" for="consentement">En cochant cette case, vous déclarez avoir pris connaissance du texte de consentement qui précède.</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="row">
+                <div class="col btn-submit--container">
+                  <button type="submit" class="btn btn-primary">Envoyer <i class="fas fa-angle-right fa-lg ml-3"></i>
+                    <div class="spinner spinner-border text-white ml-3" role="status" hidden>
+                      <span class="sr-only">Exécution...</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section id="section-confirmation" class="section" hidden>
+          <div class="card-body px-lg-5">
+
+            <h2 class="my-5">Nous avons bien reçu votre demande de création de compte</h2>
+
+            <p>Pour activer votre compte, veuillez vous présenter en bibliothèque au comptoir de prêt.</p>
+
+            <p>Pour toute question, écrivez à <a href="mailto:unequestion@bib.umontreal.ca">unequestion@bib.umontreal.ca</a></p>
+
+            <!--<p>Données:</p>
+             <pre id="data" class="pre"></pre> -->
+          </div>
+          <p><a href="#" class="btn btn-link btn-go-section-formulaire"><i class="fas fa-angle-left fa-lg mr-3"></i> Retour au formulaire</a></p>
+        </section>
+      </div>
+    </div>
+
+
+    <style>
+      input::before {
+        content: attr(name);
+        position: absolute;
+        color: red;
+        z-index: 1000;
+      }
+
+      .spinner-border {
+        height: 1.1rem;
+        width: 1.1rem;
+      }
+    </style>
+
+    </div>
+
+    <div class="modal fade" id="error-dialog" tabindex="-1" role="dialog" aria-labelledby="error-dialog-label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="error-dialog-label">Erreur</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>L'adresse courriel est déjà utilisée. Veuillez vérifier votre adresse courriel.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/js/mdb.min.js"></script>
+    <script src="https://unpkg.com/formdata-polyfill@3.0.9/formdata.min.js" async></script>
+    <script src="https://unpkg.com/browse/@polymer/paper-spinner@3.0.2/paper-spinner.js" async></script>
+  </body>
+
+</html>

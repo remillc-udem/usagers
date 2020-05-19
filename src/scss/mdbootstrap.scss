@@ -1,0 +1,48 @@
+@charset 'UTF-8';
+
+// Bootstrap
+@import '../../node_modules/mdbootstrap/scss/core/bootstrap/functions';
+// Your custom variables
+@import './custom-variables';
+@import '../../node_modules/mdbootstrap/scss/core/bootstrap/variables';
+@import '../../node_modules/mdbootstrap/scss/core/bootstrap/rfs';
+
+// CORE
+@import '../../node_modules/mdbootstrap/scss/core/mixins';
+
+@import '../../node_modules/mdbootstrap/scss/core/colors';
+@import '../../node_modules/mdbootstrap/scss/core/variables';
+@import '../../node_modules/mdbootstrap/scss/core/global';
+@import '../../node_modules/mdbootstrap/scss/core/helpers';
+@import '../../node_modules/mdbootstrap/scss/core/typography';
+@import '../../node_modules/mdbootstrap/scss/core/masks';
+@import '../../node_modules/mdbootstrap/scss/core/waves';
+
+// FREE
+@import '../../node_modules/mdbootstrap/scss/free/animations-basic';
+@import '../../node_modules/mdbootstrap/scss/free/modules/animations-extended/module';
+@import '../../node_modules/mdbootstrap/scss/free/buttons';
+@import '../../node_modules/mdbootstrap/scss/free/cards';
+@import '../../node_modules/mdbootstrap/scss/free/dropdowns';
+@import '../../node_modules/mdbootstrap/scss/free/input-group';
+@import '../../node_modules/mdbootstrap/scss/free/navbars';
+@import '../../node_modules/mdbootstrap/scss/free/pagination';
+@import '../../node_modules/mdbootstrap/scss/free/badges';
+@import '../../node_modules/mdbootstrap/scss/free/modals';
+@import '../../node_modules/mdbootstrap/scss/free/carousels';
+@import '../../node_modules/mdbootstrap/scss/free/forms';
+@import '../../node_modules/mdbootstrap/scss/free/msc';
+@import '../../node_modules/mdbootstrap/scss/free/footers';
+@import '../../node_modules/mdbootstrap/scss/free/list-group';
+@import '../../node_modules/mdbootstrap/scss/free/tables';
+@import '../../node_modules/mdbootstrap/scss/free/depreciated';
+@import '../../node_modules/mdbootstrap/scss/free/steppers';
+@import '../../node_modules/mdbootstrap/scss/free/loader';
+@import '../../node_modules/mdbootstrap/scss/free/treeview';
+// Free addons
+// @import '../../node_modules/mdbootstrap/scss/addons/datatables';
+// @import '../../node_modules/mdbootstrap/scss/addons/datatables-select';
+// @import '../../node_modules/mdbootstrap/scss/addons/directives';
+// @import '../../node_modules/mdbootstrap/scss/addons/hierarchical-display';
+// @import '../../node_modules/mdbootstrap/scss/addons/flag';
+// @import '../../node_modules/mdbootstrap/scss/addons/rating';
