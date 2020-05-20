@@ -24,7 +24,6 @@ export async function sendConfirmMail(to) {
       await mailer.sendMail({
         from: mailerConfig.from, // sender address
         to, // list of receivers
-        bcc: '"Christian Rémillard" <christian.remillard@umontreal.ca>',
         subject: "Confirmation de création de compte", // Subject line
         html: emailTemplate // html body
       })
