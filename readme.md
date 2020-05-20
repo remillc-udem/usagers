@@ -47,11 +47,25 @@ L'application utilise le module [config](https://www.npmjs.com/package/config) p
 
 ### Formulaire
 
-Assurez-vous de modifier l'attribut `action` du formulaire html si vous choisissez de l'héberger ailleurs qu'à son emplacement d'origine.
-
 Vous pouvez personnaliser les couleurs du formulaire en modifiant le fichier `src/scss/_custom-variables.scss`. Vous devrez exécuter la tâche `npm run dev` afin de recompiler la feuille de style CSS.
 
+#### Éditez le fichier du formulaire (`public/index.html`)
+
+Assurez-vous de modifier l'attribut `action` du formulaire html si vous choisissez de l'héberger ailleurs qu'à son emplacement d'origine.
+
 Adaptez le message d'accusé réception qui se trouve dans la section `#section-confirmation`.
+
+Modifier les valeurs de 2 champs:
+
+```html
+<input type="hidden" name="borrowerCategory" value="" class="prefillable" />
+<input type="hidden" name="homeBranch" value="" class="prefillable" />
+```
+
+où
+
+- `borrowerCategory` est le texte affiché dans la fiche d'un usager dans OCLC WorldShare. Par exemple, `UdeM - Ent. locales`
+- `homeBranch` est une valeur numérique qui correspond à la valeur sélectionnée sous *Home Branch* dans la fiche d'un usagers de OCOC WorldShare. Par exemple, `264890`
 
 ## Exécution
 

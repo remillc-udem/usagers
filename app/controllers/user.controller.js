@@ -112,7 +112,11 @@ async function doCreate(req, res, next) {
     await fsp.writeFile(join(__dirname, '..', '..', 'data', `${data.barcode}.json`), JSON.stringify(userData, null, 2));
     console.debug('User created in WMS.')
   } catch (err) {
-    console.error(err)
+    try {
+      console.error(JSON.stringify(err))
+    } catch (e) {
+      console.error(err)
+    }
     return next(err)
   }
 

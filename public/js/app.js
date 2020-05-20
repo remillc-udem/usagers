@@ -7,7 +7,8 @@ $(function () {
   var params = new URLSearchParams(location.search),
     $streetAddressField = $('#streetAddress'),
     $streetAddressLineFields = $('[data-field="streetAddress"]'),
-    $errorDialog = $('#error-dialog');
+    $errorDialog = $('#error-dialog'),
+    $errorDialogBody = $errorDialog.find('.modal-body');
 
   function toggleSection(section) {
     $('.section').attr('hidden', true);
@@ -101,15 +102,24 @@ $(function () {
         $('#data').text(JSON.stringify(data, null, 2))
       })
       .fail(function (jqXhr) {
-        console.log(arguments)
-        var err = jqXhr.responseJSON;
+        var err = jqXhr.responseJSON,
+          msg = '<p>Une erreur innatendue nous empêche de traiter votre demande. Veuillez communiquer avec nous via <a href="mailto:unequestion@bib.umontreal.ca">unequestion@bib.umontreal.ca</a>.</p>';
         if (err && 'status' in err && err.status === '500' && 'detail' in err && err.detail === 'Unable to create user. Please contact Customer Support at support@oclc.org.') {
           // Duplicate email error
-          $errorDialog.modal()
+          msg = "<p>L'adresse courriel est déjà utilisée. Veuillez vérifier votre adresse courriel.</p>";
         } else {
-          toggleSection('confirmation')
+          if ('urn:mace:oclc.org:eidm:schema:persona:messages:20180305' in jqXhr.responseJSON) {
+            var messages = jqXhr.responseJSON["urn:mace:oclc.org:eidm:schema:persona:messages:20180305"].messages;
+            for (var i = 0; i < messages.length; i++) {
+              console.error(messages[i])
+            }
+          } else {
+            console.log(arguments);
+          }
           // $('#data').text(JSON.stringify(jqXhr.responseJSON, null, 2));
         }
+        $errorDialogBody.html(msg);
+        $errorDialog.modal()
       })
       .always(function () {
         $btnSubmitContainer.find('.btn').removeAttr('disabled');
