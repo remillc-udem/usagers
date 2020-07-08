@@ -275,7 +275,8 @@ export default class User {
           "idAtSource": fields['idAtSource']
         };
         data["urn:mace:oclc.org:eidm:schema:persona:correlationinfo:20180101"] = {};
-        data["urn:mace:oclc.org:eidm:schema:persona:correlationinfo:20180101"]["correlationInfo"] = [JSON.stringify(correlationInfo)];
+        // data["urn:mace:oclc.org:eidm:schema:persona:correlationinfo:20180101"]["correlationInfo"] = [JSON.stringify(correlationInfo)];
+        data["urn:mace:oclc.org:eidm:schema:persona:correlationinfo:20180101"]["correlationInfo"] = [correlationInfo];
       }
 
       if (fields['oclcExpirationDate']) {

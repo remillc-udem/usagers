@@ -70,6 +70,8 @@ async function doCreate(req, res, next) {
       'externalId',
       'borrowerCategory',
       'homeBranch',
+      'idAtSource',
+      'sourceSystem'
     ];
 
     data = pick(req.body, props);

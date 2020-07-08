@@ -99,7 +99,6 @@ $(function () {
       .done(function (data) {
         toggleSection('confirmation')
         console.log(data)
-        $('#data').text(JSON.stringify(data, null, 2))
       })
       .fail(function (jqXhr) {
         var err = jqXhr.responseJSON,
@@ -116,7 +115,6 @@ $(function () {
           } else {
             console.log(arguments);
           }
-          // $('#data').text(JSON.stringify(jqXhr.responseJSON, null, 2));
         }
         $errorDialogBody.html(msg);
         $errorDialog.modal()
@@ -131,7 +129,6 @@ $(function () {
   $('.btn-go-section-formulaire').on('click', function (e) {
     e.preventDefault();
     toggleSection('formulaire');
-    $('#data').text('');
   })
 
   /** 
